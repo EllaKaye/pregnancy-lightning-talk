@@ -1,0 +1,128 @@
+---
+title: Birthing the pregnancy package
+author: Ella Kaye
+date: 2025-09-17
+date-format: long
+footer: <https://ellakaye.github.io/pregnancy-lightning-talk>
+format: 
+    revealjs:
+        theme: custom.scss
+        highlight-style: ek-light.theme
+execute:
+    echo: true
+    message: true
+    warning: true
+    error: true
+---
+
+```{r setup}
+#| echo: false
+options(crayon.enabled = TRUE)
+
+ansi_aware_handler <- function(x, options) {
+    paste0(
+        "<pre class=\"r-output\"><code>",
+        fansi::sgr_to_html(x = x, warn = FALSE, term.cap = "256"),
+        "</code></pre>"
+    )
+}
+
+knitr::knit_hooks$set(
+    output = ansi_aware_handler, 
+    message = ansi_aware_handler, 
+    warning = ansi_aware_handler,
+    error = ansi_aware_handler
+)
+```
+
+# {.center .center-h .larger175}
+
+The pregnancy package [exists]{.pink}
+
+
+#
+
+useful to [you]{.green} -> useful to [others]{.lime}
+
+. . .
+
+The value of [easy]{.blue} and [personal]{.orange}
+
+. . . 
+
+[tips]{.purple} and [tricks]{.purple}
+
+. . .
+
+# 
+```{.r}
+how_far()
+```
+. . . 
+
+```
+I am 15 weeks and 5 days pregnant.
+All going well, I am due in 24 weeks and 2 days.
+(That's 91 injections down, 170 to go...)
+```
+
+# 
+
+```{.r}
+how_far(due_date = as.Date("2025-12-01"))
+```
+
+# 
+
+```{.r} 
+how_far(due_date = NULL)
+```
+
+#
+
+```{.r}
+due_date <- due_date %||%
+    getOption("pregnancy.due_date") %||%
+    date_abort(due_date)
+```
+
+
+#
+
+```{r}
+#| echo: false
+#| output: false
+library(pregnancy)
+set_due_date(NULL)
+```
+
+```{r}
+#| output-location: fragment
+library(pregnancy)
+how_far()
+```
+
+
+# {.smaller80}
+
+```{r}
+#| output-location: fragment
+set_due_date(as.Date("2025-12-01"))
+```
+
+#
+
+```{r}
+#| output-location: fragment
+how_far()
+```
+
+# {.larger175}
+
+Care about the users' experience
+
+# {.center-h}
+
+![](images/pregnancy-hex.png)
+
+[[ellakaye.github.io/pregnany](https://ellakaye.github.io/pregnancy)]{.larger175}
