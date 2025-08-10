@@ -36,9 +36,11 @@ knitr::knit_hooks$set(
 )
 ```
 
-# {.center .center-h .larger175}
+# {.center-h}
 
-The pregnancy package [exists]{.pink-bg}
+![](images/pregnancy-hex.png)
+
+[[ellakaye.github.io/pregnancy](https://ellakaye.github.io/pregnancy)]{.larger175}
 
 
 # {.center .center-h .larger150}
@@ -47,7 +49,7 @@ useful to [you]{.green-bg} → useful to [others]{.lime-bg}
 
 . . .
 
-The value of [easy]{.blue-bg} and [personal]{.orange-bg}
+the value of [easy]{.blue-bg} and [personal]{.orange-bg}
 
 . . . 
 
@@ -138,8 +140,4 @@ how_far()
 # Make your package a pleasure to use {.center .center-h .larger125 background-color="#D4006A"}
 
 
-# {.center-h}
 
-![](images/pregnancy-hex.png)
-
-[[ellakaye.github.io/pregnancy](https://ellakaye.github.io/pregnancy)]{.larger175}
