@@ -40,9 +40,9 @@ knitr::knit_hooks$set(
 The pregnancy package [exists]{.pink}
 
 
-#
+# {.center .center-h .larger175}
 
-useful to [you]{.green} -> useful to [others]{.lime}
+useful to [you]{.green} → useful to [others]{.lime}
 
 . . .
 
@@ -50,11 +50,13 @@ The value of [easy]{.blue} and [personal]{.orange}
 
 . . . 
 
-[tips]{.purple} and [tricks]{.purple}
+[tips]{.pink} and [tricks]{.purple}
 
 . . .
 
-# 
+## How it started...
+
+
 ```{.r}
 how_far()
 ```
@@ -66,19 +68,19 @@ All going well, I am due in 24 weeks and 2 days.
 (That's 91 injections down, 170 to go...)
 ```
 
-# 
+## The 'obvious' solution
 
 ```{.r}
 how_far(due_date = as.Date("2025-12-01"))
 ```
 
-# 
+## But wouldn't this be better?
 
 ```{.r} 
 how_far(due_date = NULL)
 ```
 
-#
+## It's possible...
 
 ```{.r}
 due_date <- due_date %||%
@@ -86,8 +88,7 @@ due_date <- due_date %||%
     date_abort(due_date)
 ```
 
-
-#
+## ...with guidance...
 
 ```{r}
 #| echo: false
@@ -103,23 +104,38 @@ how_far()
 ```
 
 
-# {.smaller80}
+## ...and helper functions 
 
 ```{r}
 #| output-location: fragment
 set_due_date(as.Date("2025-12-01"))
 ```
 
-#
+## Now we're good!
 
 ```{r}
 #| output-location: fragment
 how_far()
 ```
 
-# {.larger175}
+# {.center .center-h .larger175}
 
-Care about the users' experience
+`options` and `%||%`
+
+. . .
+
+[helper functions]{.pink}
+
+. . .
+
+[**cli**]{.blue} and [**rlang**]{.blue}
+
+
+
+
+
+# [Make your package a pleasure to use]{.pink} {.center .center-h .larger125}
+
 
 # {.center-h}
 
