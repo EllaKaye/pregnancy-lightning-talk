@@ -49,10 +49,43 @@ $colors: (
     'green': $green
 );
 
+$light-colors: (
+    'pink': $pink,
+    'purple': $purple,
+    'blue': $blue,
+);
+
+$dark-colors: (
+    'orange': $orange,
+    'lime': $lime,
+    'green': $green
+);
+
 @each $name, $color in $colors {
     .#{$name} {
         color: $color;
         font-weight: 700;
+    }
+}
+
+@mixin bg($padding: 5px 15px) {
+  font-weight: 700;
+  padding: $padding;
+}
+
+@each $name, $color in $light-colors {
+    .#{$name}-bg {
+        @include bg;
+        background: $color;
+        color: $white;
+    }
+}
+
+@each $name, $color in $dark-colors {
+    .#{$name}-bg {
+        @include bg;
+        background: $color;
+        color: $dark;
     }
 }
 
@@ -67,7 +100,30 @@ $colors: (
 }
 
 // Generate styles for each box
-@each $name, $color in $colors {
+@each $name, $color in $light-colors {
+    .col-box-#{$name} {
+    @include box-style;  // uses default height
+    background: $color;
+    color: $white;
+    }
+
+    // Create a tall variant
+    .col-box-#{$name}-tall {
+        @include box-style(550px);  
+        background: $color;
+        color: $white;
+    }
+
+  // Create a short variant
+  // two shorts with 10px gap stack to same height as tall 
+    .col-box-#{$name}-short {
+        @include box-style(270px);  
+        background: $color;
+        color: $white;
+    }
+}
+
+@each $name, $color in $dark-colors {
     .col-box-#{$name} {
     @include box-style;  // uses default height
     background: $color;
