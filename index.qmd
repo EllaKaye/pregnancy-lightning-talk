@@ -3,11 +3,12 @@ title: Birthing the pregnancy package
 author: Ella Kaye
 date: 2025-09-17
 date-format: long
-footer: <https://ellakaye.github.io/pregnancy-lightning-talk>
 format: 
     revealjs:
         theme: custom.scss
         highlight-style: ek-light.theme
+        progress: false
+        menu: false
 execute:
     echo: true
     message: true
@@ -37,20 +38,20 @@ knitr::knit_hooks$set(
 
 # {.center .center-h .larger175}
 
-The pregnancy package [exists]{.pink}
+The pregnancy package [exists]{.pink-bg}
 
 
-# {.center .center-h .larger175}
+# {.center .center-h .larger150}
 
-useful to [you]{.green} → useful to [others]{.lime}
+useful to [you]{.green-bg} → useful to [others]{.lime-bg}
 
 . . .
 
-The value of [easy]{.blue} and [personal]{.orange}
+The value of [easy]{.blue-bg} and [personal]{.orange-bg}
 
 . . . 
 
-[tips]{.pink} and [tricks]{.purple}
+[tips]{.pink-bg} and [tricks]{.purple-bg}
 
 . . .
 
@@ -85,7 +86,7 @@ how_far(due_date = NULL)
 ```{.r}
 due_date <- due_date %||%
     getOption("pregnancy.due_date") %||%
-    date_abort(due_date)
+    date_stop(due_date)
 ```
 
 ## ...with guidance...
@@ -134,11 +135,11 @@ how_far()
 
 
 
-# [Make your package a pleasure to use]{.pink} {.center .center-h .larger125}
+# Make your package a pleasure to use {.center .center-h .larger125 background-color="#D4006A"}
 
 
 # {.center-h}
 
 ![](images/pregnancy-hex.png)
 
-[[ellakaye.github.io/pregnany](https://ellakaye.github.io/pregnancy)]{.larger175}
+[[ellakaye.github.io/pregnancy](https://ellakaye.github.io/pregnancy)]{.larger175}
