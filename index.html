@@ -250,39 +250,51 @@ All going well, I am due in 24 weeks and 2 days.
 <section id="with-guidance" class="slide level2">
 <h2>…with guidance…</h2>
 <div class="cell">
-<pre class="r-output"><code>Error in library(pregnancy): there is no package called 'pregnancy'
-</code></pre>
-<pre class="r-output"><code>Error in set_due_date(NULL): could not find function "set_due_date"
-</code></pre>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">library</span>(pregnancy)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href=""></a><span class="fu">library</span>(pregnancy)</span>
+<span id="cb6-2"><a href=""></a><span class="fu">how_far</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
-<pre class="r-output"><code>Error in library(pregnancy): there is no package called 'pregnancy'
-</code></pre>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">how_far</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<pre class="r-output"><code>Error in how_far(): could not find function "how_far"
+<pre class="r-output"><code><span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `how_far_calculation()`:</span>
+<span style="color: #BBBB00;">!</span> `due_date` must have class <span style="color: #0000BB;"><date></date></span>.
+<span style="color: #00BBBB;">ℹ</span> It was NULL instead.
+<span style="color: #00BBBB;">ℹ</span> You can do one of the following:
+<span style="color: #00BBBB;">•</span> set the `due_date` argument
+<span style="color: #00BBBB;">•</span> set the 'pregnancy.due_date' option for this R session with
+  `set_due_date(due_date)`
+<span style="color: #00BBBB;">•</span> (<span style="font-style: italic;">recommended</span>) set `options(pregnancy.due_date)` in your `.Rprofile`.
+<span style="color: #00BBBB;">ℹ</span> See the `vignette(pregnancy::pregnancy)` vignette for further details.
 </code></pre>
 </div>
 </section>
 <section id="and-helper-functions" class="slide level2">
 <h2>…and helper functions</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">set_due_date</span>(<span class="fu">as.Date</span>(<span class="st">"2025-12-01"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">set_due_date</span>(<span class="fu">as.Date</span>(<span class="st">"2025-12-01"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
-<pre class="r-output"><code>Error in set_due_date(as.Date("2025-12-01")): could not find function "set_due_date"
+<pre class="r-output"><code><span style="color: #00BB00;">✔</span> Due date set as December 01, 2025
+</code></pre>
+<pre class="r-output"><code><span style="color: #00BBBB;">ℹ</span> Functions in the pregnancy package will now use this `due_date` option.
+<span style="color: #00BBBB;">ℹ</span> So, for this R session, you do not need to supply a value to the `due_date`
+  argument (unless you wish to override the option).
+<span style="color: #00BBBB;">ℹ</span> To make this `due_date` option available in all R sessions, in your
+  <span style="color: #0000BB;">".Rprofile"</span>, set `options(pregnancy.due_date = ...)`
+  where ... is the value of `due_date`.
+<span style="color: #00BBBB;">ℹ</span> You can edit your <span style="color: #0000BB;">".Rprofile"</span> by calling `usethis::edit_r_profile()`
+<span style="color: #00BBBB;">ℹ</span> You can retrieve the `due_date` option with `get_due_date()`,
+  or with `getOption('pregnancy.due_date')`.
 </code></pre>
 </div>
 </section>
 <section id="now-were-good" class="slide level2">
 <h2>Now we’re good!</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href=""></a><span class="fu">how_far</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">how_far</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
-<pre class="r-output"><code>Error in how_far(): could not find function "how_far"
+<pre class="r-output"><code><span style="color: #00BBBB;">ℹ</span> You are 24 weeks and 0 days pregnant.
+<span style="color: #00BBBB;">ℹ</span> That's 16 weeks and 0 days until the due date (December 01, 2025).
+<span style="color: #00BBBB;">ℹ</span> You are 60% through the pregnancy.
 </code></pre>
 </div>
 </section></section>
