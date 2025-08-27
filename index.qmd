@@ -4,16 +4,16 @@ author: Ella Kaye
 date: 2025-09-17
 date-format: long
 format: 
-    revealjs:
-        theme: custom.scss
-        highlight-style: ek-light.theme
-        progress: false
-        menu: false
+  revealjs:
+    theme: custom.scss
+    highlight-style: ek-light.theme
+    progress: false
+    menu: false
 execute:
-    echo: true
-    message: true
-    warning: true
-    error: true
+  echo: true
+  message: true
+  warning: true
+  error: true
 ---
 
 ```{r setup}
@@ -21,18 +21,18 @@ execute:
 options(crayon.enabled = TRUE)
 
 ansi_aware_handler <- function(x, options) {
-    paste0(
-        "<pre class=\"r-output\"><code>",
-        fansi::sgr_to_html(x = x, warn = FALSE, term.cap = "256"),
-        "</code></pre>"
-    )
+  paste0(
+    "<pre class=\"r-output\"><code>",
+    fansi::sgr_to_html(x = x, warn = FALSE, term.cap = "256"),
+    "</code></pre>"
+  )
 }
 
 knitr::knit_hooks$set(
-    output = ansi_aware_handler, 
-    message = ansi_aware_handler, 
-    warning = ansi_aware_handler,
-    error = ansi_aware_handler
+  output = ansi_aware_handler, 
+  message = ansi_aware_handler, 
+  warning = ansi_aware_handler,
+  error = ansi_aware_handler
 )
 ```
 
@@ -87,8 +87,8 @@ how_far(due_date = NULL)
 
 ```{.r}
 due_date <- due_date %||%
-    getOption("pregnancy.due_date") %||%
-    date_stop(due_date)
+  getOption("pregnancy.due_date") %||%
+  date_stop(due_date)
 ```
 
 ## ...with guidance...
@@ -132,9 +132,6 @@ how_far()
 . . .
 
 [**cli**]{.blue} and [**rlang**]{.blue}
-
-
-
 
 
 # Make your package a pleasure to use {.center .center-h .larger125 background-color="#D4006A"}
