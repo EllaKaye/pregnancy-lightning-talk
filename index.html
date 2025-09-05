@@ -212,11 +212,6 @@ Ella Kaye
 <img data-src="images/pregnancy-hex.png" class="r-stretch"><p><span class="larger175"><a href="https://ellakaye.github.io/pregnancy">ellakaye.github.io/pregnancy</a></span></p>
 </section>
 
-<section id="make-your-package-a-pleasure-to-use" class="title-slide slide level1 center center-h larger125" data-background-color="#D4006A">
-<h1>Make your package a pleasure to use</h1>
-
-</section>
-
 <section>
 <section id="section-1" class="title-slide slide level1 center center-h larger150">
 <h1></h1>
@@ -239,7 +234,7 @@ All going well, I am due in 24 weeks and 2 days.
 </section>
 <section id="the-obvious-solution" class="slide level2">
 <h2>The ‘obvious’ solution</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">how_far</span>(<span class="at">due_date =</span> <span class="fu">as.Date</span>(<span class="st">"2025-12-01"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a><span class="fu">how_far</span>(<span class="at">due_date =</span> <span class="st">"2025-12-01"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="but-wouldnt-this-be-better" class="slide level2">
 <h2>But wouldn’t this be better?</h2>
@@ -248,8 +243,8 @@ All going well, I am due in 24 weeks and 2 days.
 <section id="its-possible" class="slide level2">
 <h2>It’s possible…</h2>
 <div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href=""></a>due_date <span class="ot">&lt;-</span> due_date <span class="sc">%||%</span></span>
-<span id="cb5-2"><a href=""></a>    <span class="fu">getOption</span>(<span class="st">"pregnancy.due_date"</span>) <span class="sc">%||%</span></span>
-<span id="cb5-3"><a href=""></a>    <span class="fu">date_stop</span>(due_date)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href=""></a>  <span class="fu">getOption</span>(<span class="st">"pregnancy.due_date"</span>) <span class="sc">%||%</span></span>
+<span id="cb5-3"><a href=""></a>  <span class="fu">date_stop</span>(due_date)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="with-guidance" class="slide level2">
 <h2>…with guidance…</h2>
@@ -259,7 +254,7 @@ All going well, I am due in 24 weeks and 2 days.
 </div>
 <div class="cell fragment">
 <pre class="r-output"><code><span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `how_far_calculation()`:</span>
-<span style="color: #BBBB00;">!</span> `due_date` must have class <span style="color: #0000BB;"><date></date></span>.
+<span style="color: #BBBB00;">!</span> `due_date` must have class <span style="color: #0000BB;"><date></date></span> or <span style="color: #0000BB;"><character></character></span>.
 <span style="color: #00BBBB;">ℹ</span> It was NULL instead.
 <span style="color: #00BBBB;">ℹ</span> You can do one of the following:
 <span style="color: #00BBBB;">•</span> set the `due_date` argument
@@ -273,7 +268,7 @@ All going well, I am due in 24 weeks and 2 days.
 <section id="and-helper-functions" class="slide level2">
 <h2>…and helper functions</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">set_due_date</span>(<span class="fu">as.Date</span>(<span class="st">"2025-12-01"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href=""></a><span class="fu">set_due_date</span>(<span class="st">"2025-12-01"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
 <pre class="r-output"><code><span style="color: #00BB00;">✔</span> Due date set as December 01, 2025
@@ -296,9 +291,9 @@ All going well, I am due in 24 weeks and 2 days.
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href=""></a><span class="fu">how_far</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell fragment">
-<pre class="r-output"><code><span style="color: #00BBBB;">ℹ</span> You are 24 weeks and 4 days pregnant.
-<span style="color: #00BBBB;">ℹ</span> That's 15 weeks and 3 days until the due date (December 01, 2025).
-<span style="color: #00BBBB;">ℹ</span> You are 61% through the pregnancy.
+<pre class="r-output"><code><span style="color: #00BBBB;">ℹ</span> You are 27 weeks and 4 days pregnant.
+<span style="color: #00BBBB;">ℹ</span> That's 12 weeks and 3 days until the due date (December 01, 2025).
+<span style="color: #00BBBB;">ℹ</span> You are 69% through the pregnancy.
 </code></pre>
 </div>
 </section></section>
@@ -313,14 +308,8 @@ All going well, I am due in 24 weeks and 2 days.
 </div>
 </section>
 
-<section id="make-your-package-a-pleasure-to-use-1" class="title-slide slide level1 center center-h larger125" data-background-color="#D4006A">
+<section id="make-your-package-a-pleasure-to-use" class="title-slide slide level1 center center-h larger125" data-background-color="#D4006A">
 <h1>Make your package a pleasure to use</h1>
-
-</section>
-
-<section id="section-3" class="title-slide slide level1 center center-h larger150">
-<h1></h1>
-<p><a href="https://ellakaye.co.uk" class="pink larger175">ellakaye.co.uk</a></p>
 
 </section>
     </div>
