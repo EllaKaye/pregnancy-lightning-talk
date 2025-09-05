@@ -74,7 +74,7 @@ All going well, I am due in 24 weeks and 2 days.
 ## The 'obvious' solution
 
 ```{.r}
-how_far(due_date = as.Date("2025-12-01"))
+how_far(due_date = "2025-12-01")
 ```
 
 ## But wouldn't this be better?
@@ -111,7 +111,7 @@ how_far()
 
 ```{r}
 #| output-location: fragment
-set_due_date(as.Date("2025-12-01"))
+set_due_date("2025-12-01")
 ```
 
 ## Now we're good!
@@ -135,6 +135,4 @@ how_far()
 
 
 # Make your package a pleasure to use {.center .center-h .larger125 background-color="#D4006A"}
-
-
 
