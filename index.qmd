@@ -36,34 +36,13 @@ knitr::knit_hooks$set(
 )
 ```
 
-# {.center-h}
-
-![](images/pregnancy-hex.png)
-
-[[ellakaye.github.io/pregnancy](https://ellakaye.github.io/pregnancy)]{.larger175}
-
-
-# {.center .center-h .larger150}
-
-useful to [you]{.green-bg} → useful to [others]{.lime-bg}
-
-. . .
-
-the value of [easy]{.blue-bg} and [personal]{.orange-bg}
-
-. . . 
-
-[tips]{.pink-bg} and [tricks]{.purple-bg}
-
-. . .
-
 ## How it started...
 
 
 ```{.r}
 how_far()
 ```
-. . . 
+
 
 ```
 I am 15 weeks and 5 days pregnant.
@@ -71,19 +50,92 @@ All going well, I am due in 24 weeks and 2 days.
 (That's 91 injections down, 170 to go...)
 ```
 
-## The 'obvious' solution
 
-```{.r}
-how_far(due_date = "2025-12-01")
+# {.center .center-h .larger150}
+
+useful for [me]{.green-bg} → useful for [others]{.lime-bg}
+
+. . .
+
+[easy]{.blue-bg} and [personal]{.orange-bg}
+
+
+# make the package a pleasure to use {.center .center-h .larger125 background-color="#D4006A"}
+
+# {.center .center-h .larger150}
+
+[tips]{.pink-bg} and [tricks]{.purple-bg}
+
+. . .
+
+`options` and `%||%`
+
+. . . 
+
+**{rlang}** and **{cli}**
+
+. . .
+
+utility and helper functions
+
+
+## Pregnancy 1
+
+```{r}
+#| echo: false
+#| output: false
+library(pregnancy)
+set_due_date("2025-12-01")
 ```
 
-## But wouldn't this be better?
+```{r}
+library(pregnancy)
+how_far()
+```
+
+## Pregnancy 2
+
+```{r}
+#| echo: false
+#| output: false
+set_due_date("2025-10-10")
+set_person("I")
+```
+
+```{r}
+how_far()
+```
+
+## Pregnancy 3
+
+```{r}
+#| echo: false
+#| output: false
+set_due_date("2026-01-20")
+set_person("Ruth")
+```
+
+```{r}
+how_far(on_date = "2025-12-25")
+```
+
+. . . 
+
+```{r}
+date_when(weeks = 33)
+```
+
+## NULL defaults
 
 ```{.r} 
-how_far(due_date = NULL)
+how_far(
+  on_date = Sys.Date(), 
+  due_date = NULL, 
+  person = NULL
+)
 ```
 
-## It's possible...
+## options and %||%
 
 ```{.r}
 due_date <- due_date %||%
@@ -91,48 +143,47 @@ due_date <- due_date %||%
   date_stop(due_date)
 ```
 
-## ...with guidance...
+## Helpful errors with {rlang} and {cli}
 
 ```{r}
 #| echo: false
 #| output: false
-library(pregnancy)
 set_due_date(NULL)
 ```
 
+
 ```{r}
-#| output-location: fragment
-library(pregnancy)
+#| eval: false
 how_far()
 ```
 
-
-## ...and helper functions 
-
-```{r}
-#| output-location: fragment
-set_due_date("2025-12-01")
-```
-
-## Now we're good!
-
-```{r}
-#| output-location: fragment
-how_far()
-```
-
-# {.center .center-h .larger175}
-
-`options` and `%||%`
-
 . . .
 
-[helper functions]{.pink}
+```
+`due_date` must have class <Date> or <character>.
+ℹ It was NULL instead.
+```
+. . . 
 
-. . .
+```
+ℹ You can do one of the following:
+• set the `due_date` argument
+• set the 'pregnancy.due_date' option for this R session with
+  `set_due_date(due_date)`
+• (recommended) set `options(pregnancy.due_date)` in your `.Rprofile`.
+```
+. . . 
 
-[**cli**]{.blue} and [**rlang**]{.blue}
+```
+ℹ See the pregnancy::pregnancy vignette for further details.
+```
 
 
-# Make your package a pleasure to use {.center .center-h .larger125 background-color="#D4006A"}
+## ellakaye.github.io/pregnancy {.center-h}
+
+![](images/pregnancy-hex-qr.svg){fig-align="center" width=120%}
+
+
+# make your package a pleasure to use {.center .center-h .larger125 background-color="#006AD4"}
+
 
