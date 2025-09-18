@@ -1,3 +1,3 @@
-# pregnancy-lightning-talk
+# Birthing the **pregnancy** package
 
-Work-in-progress slides for my lightning talk at posit::conf(2025)
+Slides for my lightning talk at posit::conf(2025)
